@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spielplan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <style>
         table {
             width: 100%;
@@ -18,19 +18,11 @@
             background-color: #f4f4f4;
             text-align: left;
         }
-        th.heim {
-            background-color: #f4f4f4;
-            text-align: right;
-        } 
-        td {
-            text-align: left; /* Standardausrichtung für alle Zellen */
-        }
-        td.heim {
+        
+        .heim {
             text-align: right; /* Rechte Ausrichtung für Heim-Spalte */
         }
-        th {
-            background-color: #f4f4f4;
-        }
+        
         tr:nth-child(even) {
             background-color: #f9f9f9;
         }
@@ -47,134 +39,121 @@
         img {
             height: 16px;  /* Passt die Logogröße an die Textgröße an */
             vertical-align: middle;
-            margin-left: 6px;  /* Abstand zwischen Text und Logo */
+            margin-left: auto;  /* Abstand zwischen Text und Logo */
         }
     </style>
 </head>
 <body>
-    <h1>Spielplan</h1>
     <table>
         <thead>
             <tr>
                 <th>Datum & Uhrzeit</th>
-                <th class="heim">Heim</th>
-                <th>Gast</th>
-                <th>Ergebnis</th>
-                <th>Spielstatus</th>
-                <th>Austragungsort</th>
                 <th>Liga</th>
+                <th class="heim">Heim</th>
+                <th>Ergebnis</th>
+                <th>Gast</th>
+                <th>Austragungsort</th>
             </tr>
         </thead>
         <tbody>
 
         <tr>
             <td>19.01.2025, 10:00 Uhr</td>
-            <td class="heim">HC Büelen Nesslau <img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'></td>
-            <td>HC Neftenbach <img src='https://www.handball.ch/images/club/140550.png' alt='Logo HC Neftenbach'></td>
-            <td><a href="https://www.handball.ch/de/matchcenter/spiele/490359" target="_blank">45:32</a></td>
-            <td>Gespielt</td>
-            <td><a href="https://www.google.com/maps?q=B%C3%BCelen%2C+Nesslau" target="_blank">Nesslau Büelen</a></td>
             <td>Junioren U17 Promotion S1</td>
+            <td class="heim">HC Büelen Nesslau <img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'></td>
+            <td><a href="https://www.handball.ch/de/matchcenter/spiele/490359" target="_blank">45:32</a></td>
+            <td><img src='https://www.handball.ch/images/club/140550.png' alt='Logo HC Neftenbach'>HC Neftenbach</td>
+            <td><a href="https://www.google.com/maps?q=B%C3%BCelen%2C+Nesslau" target="_blank">Nesslau Büelen</a></td>
         </tr>
     
         <tr>
             <td>25.01.2025, 15:30 Uhr</td>
-            <td class="heim">HC Büelen Nesslau <img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'></td>
-            <td>HC Goldach-Rorschach 5 <img src='https://www.handball.ch/images/club/140685.png' alt='Logo HC Goldach-Rorschach 5'></td>
-            <td><a href="https://www.handball.ch/de/matchcenter/spiele/483619" target="_blank">-</a></td>
-            <td>Noch nicht ausg.</td>
-            <td><a href="https://www.google.com/maps?q=B%C3%BCelen%2C+Nesslau" target="_blank">Nesslau Büelen</a></td>
             <td>Frauen 3. Liga</td>
+            <td class="heim">HC Büelen Nesslau <img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'></td>
+            <td><a href="https://www.handball.ch/de/matchcenter/spiele/483619" target="_blank">-</a></td>
+            <td><img src='https://www.handball.ch/images/club/140685.png' alt='Logo HC Goldach-Rorschach 5'>HC Goldach-Rorschach 5</td>
+            <td><a href="https://www.google.com/maps?q=B%C3%BCelen%2C+Nesslau" target="_blank">Nesslau Büelen</a></td>
         </tr>
     
         <tr>
             <td>25.01.2025, 19:15 Uhr</td>
-            <td class="heim">HC Stammheim 1 <img src='https://www.handball.ch/images/club/140568.png' alt='Logo HC Stammheim 1'></td>
-            <td>HC Büelen Nesslau <img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'></td>
-            <td><a href="https://www.handball.ch/de/matchcenter/spiele/479842" target="_blank">-</a></td>
-            <td>Noch nicht ausg.</td>
-            <td><a href="https://www.google.com/maps?q=Rietweg+5%2C+Unterstammheim" target="_blank">Stammheim Stammertal</a></td>
             <td>Männer 3. Liga</td>
+            <td class="heim">HC Stammheim 1 <img src='https://www.handball.ch/images/club/140568.png' alt='Logo HC Stammheim 1'></td>
+            <td><a href="https://www.handball.ch/de/matchcenter/spiele/479842" target="_blank">-</a></td>
+            <td><img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'>HC Büelen Nesslau</td>
+            <td><a href="https://www.google.com/maps?q=Rietweg+5%2C+Unterstammheim" target="_blank">Stammheim Stammertal</a></td>
         </tr>
     
         <tr>
             <td>01.02.2025, 15:15 Uhr</td>
-            <td class="heim">HC Flawil 2 <img src='https://www.handball.ch/images/club/140478.png' alt='Logo HC Flawil 2'></td>
-            <td>HC Büelen Nesslau <img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'></td>
-            <td><a href="https://www.handball.ch/de/matchcenter/spiele/479869" target="_blank">-</a></td>
-            <td>Noch nicht ausg.</td>
-            <td><a href="https://www.google.com/maps?q=Unterstrasse+10%2C+Flawil" target="_blank">Flawil Botsberg</a></td>
             <td>Männer 3. Liga</td>
+            <td class="heim">HC Flawil 2 <img src='https://www.handball.ch/images/club/140478.png' alt='Logo HC Flawil 2'></td>
+            <td><a href="https://www.handball.ch/de/matchcenter/spiele/479869" target="_blank">-</a></td>
+            <td><img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'>HC Büelen Nesslau</td>
+            <td><a href="https://www.google.com/maps?q=Unterstrasse+10%2C+Flawil" target="_blank">Flawil Botsberg</a></td>
         </tr>
     
         <tr>
             <td>02.02.2025, 16:00 Uhr</td>
-            <td class="heim">TV Appenzell 2 <img src='https://www.handball.ch/images/club/140277.png' alt='Logo TV Appenzell 2'></td>
-            <td>HC Büelen Nesslau <img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'></td>
-            <td><a href="https://www.handball.ch/de/matchcenter/spiele/483614" target="_blank">-</a></td>
-            <td>Noch nicht ausg.</td>
-            <td><a href="https://www.google.com/maps?q=Kaustrasse+3c%2C+Appenzell" target="_blank">Appenzell Wühre</a></td>
             <td>Frauen 3. Liga</td>
+            <td class="heim">TV Appenzell 2 <img src='https://www.handball.ch/images/club/140277.png' alt='Logo TV Appenzell 2'></td>
+            <td><a href="https://www.handball.ch/de/matchcenter/spiele/483614" target="_blank">-</a></td>
+            <td><img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'>HC Büelen Nesslau</td>
+            <td><a href="https://www.google.com/maps?q=Kaustrasse+3c%2C+Appenzell" target="_blank">Appenzell Wühre</a></td>
         </tr>
     
         <tr>
             <td>08.02.2025, 11:00 Uhr</td>
-            <td class="heim">HC Büelen Nesslau <img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'></td>
-            <td>SG Romanshorn <img src='https://www.handball.ch/images/club/140551.png' alt='Logo SG Romanshorn'></td>
-            <td><a href="https://www.handball.ch/de/matchcenter/spiele/483600" target="_blank">-</a></td>
-            <td>Noch nicht ausg.</td>
-            <td><a href="https://www.google.com/maps?q=B%C3%BCelen%2C+Nesslau" target="_blank">Nesslau Büelen</a></td>
             <td>Frauen 3. Liga</td>
+            <td class="heim">HC Büelen Nesslau <img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'></td>
+            <td><a href="https://www.handball.ch/de/matchcenter/spiele/483600" target="_blank">-</a></td>
+            <td><img src='https://www.handball.ch/images/club/140551.png' alt='Logo SG Romanshorn'>SG Romanshorn</td>
+            <td><a href="https://www.google.com/maps?q=B%C3%BCelen%2C+Nesslau" target="_blank">Nesslau Büelen</a></td>
         </tr>
     
         <tr>
             <td>08.02.2025, 12:45 Uhr</td>
-            <td class="heim">HC Büelen Nesslau <img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'></td>
-            <td>HC Stammheim 1 <img src='https://www.handball.ch/images/club/140568.png' alt='Logo HC Stammheim 1'></td>
-            <td><a href="https://www.handball.ch/de/matchcenter/spiele/479878" target="_blank">-</a></td>
-            <td>Noch nicht ausg.</td>
-            <td><a href="https://www.google.com/maps?q=B%C3%BCelen%2C+Nesslau" target="_blank">Nesslau Büelen</a></td>
             <td>Männer 3. Liga</td>
+            <td class="heim">HC Büelen Nesslau <img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'></td>
+            <td><a href="https://www.handball.ch/de/matchcenter/spiele/479878" target="_blank">-</a></td>
+            <td><img src='https://www.handball.ch/images/club/140568.png' alt='Logo HC Stammheim 1'>HC Stammheim 1</td>
+            <td><a href="https://www.google.com/maps?q=B%C3%BCelen%2C+Nesslau" target="_blank">Nesslau Büelen</a></td>
         </tr>
     
         <tr>
             <td>09.02.2025, 10:30 Uhr</td>
-            <td class="heim">SG Otmar Bruggen <img src='https://www.handball.ch/images/club/140684.png' alt='Logo SG Otmar Bruggen'></td>
-            <td>HC Büelen Nesslau <img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'></td>
-            <td><a href="https://www.handball.ch/de/matchcenter/spiele/490362" target="_blank">-</a></td>
-            <td>Noch nicht ausg.</td>
-            <td><a href="https://www.google.com/maps?q=Bogenstrasse+10%2C+St.+Gallen" target="_blank">St. Gallen Kreuzbleiche</a></td>
             <td>Junioren U17 Promotion S1</td>
+            <td class="heim">SG Otmar Bruggen <img src='https://www.handball.ch/images/club/140684.png' alt='Logo SG Otmar Bruggen'></td>
+            <td><a href="https://www.handball.ch/de/matchcenter/spiele/490362" target="_blank">-</a></td>
+            <td><img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'>HC Büelen Nesslau</td>
+            <td><a href="https://www.google.com/maps?q=Bogenstrasse+10%2C+St.+Gallen" target="_blank">St. Gallen Kreuzbleiche</a></td>
         </tr>
     
         <tr>
             <td>15.02.2025, 12:00 Uhr</td>
-            <td class="heim">HC Büelen Nesslau <img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'></td>
-            <td>HCL Aadorf <img src='https://www.handball.ch/images/club/140474.png' alt='Logo HCL Aadorf'></td>
-            <td><a href="https://www.handball.ch/de/matchcenter/spiele/479871" target="_blank">-</a></td>
-            <td>Noch nicht ausg.</td>
-            <td><a href="https://www.google.com/maps?q=B%C3%BCelen%2C+Nesslau" target="_blank">Nesslau Büelen</a></td>
             <td>Männer 3. Liga</td>
+            <td class="heim">HC Büelen Nesslau <img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'></td>
+            <td><a href="https://www.handball.ch/de/matchcenter/spiele/479871" target="_blank">-</a></td>
+            <td><img src='https://www.handball.ch/images/club/140474.png' alt='Logo HCL Aadorf'>HCL Aadorf</td>
+            <td><a href="https://www.google.com/maps?q=B%C3%BCelen%2C+Nesslau" target="_blank">Nesslau Büelen</a></td>
         </tr>
     
         <tr>
             <td>15.02.2025, 13:45 Uhr</td>
-            <td class="heim">HC Büelen Nesslau <img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'></td>
-            <td>SG HC Flawil / TV Herisau <img src='https://www.handball.ch/images/club/140478.png' alt='Logo SG HC Flawil / TV Herisau'></td>
-            <td><a href="https://www.handball.ch/de/matchcenter/spiele/490370" target="_blank">-</a></td>
-            <td>Noch nicht ausg.</td>
-            <td><a href="https://www.google.com/maps?q=B%C3%BCelen%2C+Nesslau" target="_blank">Nesslau Büelen</a></td>
             <td>Junioren U17 Promotion S1</td>
+            <td class="heim">HC Büelen Nesslau <img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'></td>
+            <td><a href="https://www.handball.ch/de/matchcenter/spiele/490370" target="_blank">-</a></td>
+            <td><img src='https://www.handball.ch/images/club/140478.png' alt='Logo SG HC Flawil / TV Herisau'>SG HC Flawil / TV Herisau</td>
+            <td><a href="https://www.google.com/maps?q=B%C3%BCelen%2C+Nesslau" target="_blank">Nesslau Büelen</a></td>
         </tr>
     
         <tr>
             <td>15.02.2025, 17:15 Uhr</td>
-            <td class="heim">HC Amriswil 2 <img src='https://www.handball.ch/images/club/140473.png' alt='Logo HC Amriswil 2'></td>
-            <td>HC Büelen Nesslau <img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'></td>
-            <td><a href="https://www.handball.ch/de/matchcenter/spiele/483623" target="_blank">-</a></td>
-            <td>Noch nicht ausg.</td>
-            <td><a href="https://www.google.com/maps?q=St.+Gallerstrasse+9b%2C+Amriswil" target="_blank">Amriswil Oberfeld</a></td>
             <td>Frauen 3. Liga</td>
+            <td class="heim">HC Amriswil 2 <img src='https://www.handball.ch/images/club/140473.png' alt='Logo HC Amriswil 2'></td>
+            <td><a href="https://www.handball.ch/de/matchcenter/spiele/483623" target="_blank">-</a></td>
+            <td><img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'>HC Büelen Nesslau</td>
+            <td><a href="https://www.google.com/maps?q=St.+Gallerstrasse+9b%2C+Amriswil" target="_blank">Amriswil Oberfeld</a></td>
         </tr>
     
         </tbody>

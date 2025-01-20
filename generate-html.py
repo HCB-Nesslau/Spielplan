@@ -25,7 +25,7 @@ html_content = """
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spielplan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <style>
         table {
             width: 100%;
@@ -39,19 +39,11 @@ html_content = """
             background-color: #f4f4f4;
             text-align: left;
         }
-        th.heim {
-            background-color: #f4f4f4;
-            text-align: right;
-        } 
-        td {
-            text-align: left; /* Standardausrichtung für alle Zellen */
-        }
-        td.heim {
+        
+        .heim {
             text-align: right; /* Rechte Ausrichtung für Heim-Spalte */
         }
-        th {
-            background-color: #f4f4f4;
-        }
+        
         tr:nth-child(even) {
             background-color: #f9f9f9;
         }
@@ -68,22 +60,20 @@ html_content = """
         img {
             height: 16px;  /* Passt die Logogröße an die Textgröße an */
             vertical-align: middle;
-            margin-left: 6px;  /* Abstand zwischen Text und Logo */
+            margin-left: auto;  /* Abstand zwischen Text und Logo */
         }
     </style>
 </head>
 <body>
-    <h1>Spielplan</h1>
     <table>
         <thead>
             <tr>
                 <th>Datum & Uhrzeit</th>
-                <th class="heim">Heim</th>
-                <th>Gast</th>
-                <th>Ergebnis</th>
-                <th>Spielstatus</th>
-                <th>Austragungsort</th>
                 <th>Liga</th>
+                <th class="heim">Heim</th>
+                <th>Ergebnis</th>
+                <th>Gast</th>
+                <th>Austragungsort</th>
             </tr>
         </thead>
         <tbody>
@@ -97,10 +87,9 @@ for game in filtered_games:
     team_a_logo = f"https://www.handball.ch/images/club/{game['clubTeamAId']}.png"
     team_b_logo = f"https://www.handball.ch/images/club/{game['clubTeamBId']}.png"
     team_a = f"{game['teamAName']} <img src='{team_a_logo}' alt='Logo {game['teamAName']}'>"
-    team_b = f"{game['teamBName']} <img src='{team_b_logo}' alt='Logo {game['teamBName']}'>"
+    team_b = f"<img src='{team_b_logo}' alt='Logo {game['teamBName']}'>{game['teamBName']}"
     
     result = f"{game['teamAScoreFT']}:{game['teamBScoreFT']}" if game['gameStatusId'] == 2 else "-"
-    status = game['gameStatus']
     league = game["leagueLong"]
 
     # Google Maps URL generieren
@@ -116,12 +105,11 @@ for game in filtered_games:
     html_content += f"""
         <tr>
             <td>{game_date}</td>
-            <td class="heim">{team_a}</td>
-            <td>{team_b}</td>
-            <td>{result_link}</td>
-            <td>{status}</td>
-            <td>{venue_link}</td>
             <td>{league}</td>
+            <td class="heim">{team_a}</td>
+            <td>{result_link}</td>
+            <td>{team_b}</td>
+            <td>{venue_link}</td>
         </tr>
     """
 
@@ -134,7 +122,7 @@ html_content += """
 """
 
 # HTML-Datei speichern
-with open('spielplan.html', 'w', encoding='utf-8') as file:
+with open('index.html', 'w', encoding='utf-8') as file:
     file.write(html_content)
 
 print("HTML-Datei wurde erfolgreich erstellt!")
