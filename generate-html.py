@@ -79,20 +79,21 @@ html_content = """
     </style>
 </head>
 <body>
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th>Datum</th>
-                <th>Liga</th>
-                <th class="heim">Heim</th>
-                <th></th>
-                <th class="score">Ergebnis</th>
-                <th></th>
-                <th class="gast">Gast</th>
-                <th>Austragungsort</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Datum</th>
+                    <th>Liga</th>
+                    <th class="heim">Heim</th>
+                    <th></th>
+                    <th class="score">Ergebnis</th>
+                    <th></th>
+                    <th class="gast">Gast</th>
+                    <th>Austragungsort</th>
+                </tr>
+            </thead>
+            <tbody>
 """
 
 
@@ -127,23 +128,24 @@ for game in filtered_games:
     result_link = f'<a href="{handball_url}" target="_blank">{result}</a>'
 
     html_content += f"""
-        <tr class="{row_class}">
-            <td>{game_date}</td>
-            <td>{league}</td>
-            <td class="heim">{game['teamAName']}</td>
-            <td class="logo-row"><div class='img-container'><img src='{team_a_logo}' alt='Logo {game['teamAName']}'></div></td>
-            <td class="score">{result_link}</td>
-            <td class="logo-row"><div class='img-container'><img src='{team_b_logo}' alt='Logo {game['teamBName']}'></div></td>
-            <td class="gast">{game['teamBName']}</td>
-            <td>{venue_link}</td>
-        </tr>
+            <tr class="{row_class}">
+                <td style="display: ruby-text;">{game_date}</td>
+                <td>{league}</td>
+                <td class="heim">{game['teamAName']}</td>
+                <td class="logo-row"><div class='img-container'><img src='{team_a_logo}' alt='Logo {game['teamAName']}'></div></td>
+                <td class="score">{result_link}</td>
+                <td class="logo-row"><div class='img-container'><img src='{team_b_logo}' alt='Logo {game['teamBName']}'></div></td>
+                <td class="gast">{game['teamBName']}</td>
+                <td>{venue_link}</td>
+            </tr>
     """
     previous_date = game_datetime
 
 # Abschluss der HTML-Datei
 html_content += """
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
 """
