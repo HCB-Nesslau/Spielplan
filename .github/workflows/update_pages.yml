@@ -1,6 +1,7 @@
 name: Update GitHub Pages
 
 on:
+  workflow_dispatch: # Allow Manual Triggering
   schedule:
     # Run the workflow once a day at 00:00 UTC
     - cron: "0 0 * * *"
