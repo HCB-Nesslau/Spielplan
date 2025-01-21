@@ -6,7 +6,7 @@ url = "https://clubapi.handball.ch/rest/v1/clubs/296614/games"
 api_key = os.getenv('API_KEY')
 
 headers = {
-  'Authorization': 'Basic {api_key}'
+  'Authorization': f"Basic {api_key}"
 }
 
 response = requests.get(url, headers=headers)

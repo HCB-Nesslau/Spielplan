@@ -152,4 +152,3 @@ html_content += """
 with open('index.html', 'w', encoding='utf-8') as file:
     file.write(html_content)
 
-print("HTML-Datei wurde erfolgreich erstellt!")
