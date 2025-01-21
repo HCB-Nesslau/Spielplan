@@ -41,7 +41,6 @@ filtered_games = [
 
 filtered_games.sort(key=lambda game: datetime.fromisoformat(game["gameDateTime"]))
 
-#print(filtered_games)
 
 
 # HTML-Tabellen-Header
