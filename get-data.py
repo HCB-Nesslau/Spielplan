@@ -21,5 +21,5 @@ for game in data:
 
 
 # In JSON exportieren
-with open('data.json', 'w', encoding='utf-8') as json_file: 
+with open('./data.json', 'w', encoding='utf-8') as json_file: 
     json.dump(data, json_file, ensure_ascii=False, indent=4)

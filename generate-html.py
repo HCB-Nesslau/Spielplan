@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 from urllib.parse import urlencode
 
 # JSON-Datei laden
-with open('data.json', 'r', encoding='utf-8') as file:
+with open('./data.json', 'r', encoding='utf-8') as file:
     games = json.load(file)
 
 # Zeitfenster definieren: -3 Tage bis +30 Tage ab heute
@@ -149,6 +149,6 @@ html_content += """
 """
 
 # HTML-Datei speichern
-with open('index.html', 'w', encoding='utf-8') as file:
+with open('./index.html', 'w', encoding='utf-8') as file:
     file.write(html_content)
 
