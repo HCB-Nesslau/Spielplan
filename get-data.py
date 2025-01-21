@@ -1,10 +1,12 @@
 import requests
 import json
+import os
 
 url = "https://clubapi.handball.ch/rest/v1/clubs/296614/games"
+api_key = os.getenv('API_KEY')
 
 headers = {
-  'Authorization': 'Basic **Obscured for Security**'
+  'Authorization': 'Basic {api_key}'
 }
 
 response = requests.get(url, headers=headers)
