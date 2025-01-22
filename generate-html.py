@@ -101,6 +101,17 @@ html_content = """
         tr.no-border > td {
             padding-top: 0;
         }
+        .datetime-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem; /* Adjust spacing between date and time */
+        }
+        .datetime-container .date {
+            white-space: nowrap;
+        }
+        .datetime-container .time {
+            white-space: nowrap;
+        }
     </style>
 </head>
 <body>
@@ -109,6 +120,7 @@ html_content = """
             <thead>
                 <tr>
                     <th>Datum</th>
+                    <th></th>
                     <th>Liga</th>
                     <th class="heim">Heim</th>
                     <th></th>
@@ -125,6 +137,8 @@ previous_date = None
 # Zeilen für jede gefilterte Partie hinzufügen
 for game in filtered_games:
     game_datetime = datetime.fromisoformat(game["gameDateTime"])
+    date = game_datetime.strftime("%d.%m.%Y")
+    time = game_datetime.strftime("%H:%M Uhr")
      
     # Google Maps URL generieren
     query = urlencode({"q": f"{game['venueAddress']}, {game['venueCity']}"})
@@ -133,10 +147,14 @@ for game in filtered_games:
 
     # Custom Event Zeile
     if game["leagueLong"] == "Custom Event":
-        game_date = game_datetime.strftime("%d.%m.%Y, %H:%M Uhr")
         html_content += f"""
             <tr>
-                <td>{game_date}</td>
+                <td colspan="2">
+                    <div class="datetime-container">
+                        <span class="date">{date}</span>
+                        <span class="time">{time}</span>
+                    </div>
+                </td>
                 <td colspan="6" class="custom-event">{game['teamAName']}</td>
                 <td>{venue_link}</td>
             </tr>
@@ -147,13 +165,11 @@ for game in filtered_games:
         # Formatierung für Events die am gleichen Tag stattfinden
         if previous_date and previous_date.date() == game_datetime.date():
             row_class = "no-border" 
-            indent = "&nbsp;" * 19
-            game_date = indent + game_datetime.strftime("%H:%M Uhr")
+            date_style = "visibility: hidden;"
         else: 
             row_class = ""
-            game_date = game_datetime.strftime("%d.%m.%Y, %H:%M Uhr")
+            date_style = ""
     
-
         # Team A (Heim) und Team B (Gast) mit Logos
         team_a_logo = f"https://www.handball.ch/images/club/{game['clubTeamAId']}.png"
         team_b_logo = f"https://www.handball.ch/images/club/{game['clubTeamBId']}.png"
@@ -168,7 +184,12 @@ for game in filtered_games:
 
         html_content += f"""
                 <tr class="{row_class}">
-                    <td style="display: ruby-text;">{game_date}</td>
+                    <td colspan="2">
+                        <div class="datetime-container">
+                            <span class="date" style="{date_style}">{date}</span>
+                            <span class="time">{time}</span>
+                        </div>
+                    </td>
                     <td>{league}</td>
                     <td class="heim">{game['teamAName']}</td>
                     <td class="logo-row"><div class='img-container'><img src='{team_a_logo}' alt='Logo {game['teamAName']}'></div></td>
