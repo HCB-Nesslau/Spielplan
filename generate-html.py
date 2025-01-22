@@ -41,8 +41,6 @@ filtered_games = [
 
 filtered_games.sort(key=lambda game: datetime.fromisoformat(game["gameDateTime"]))
 
-
-
 # HTML-Tabellen-Header
 html_content = """
 <!DOCTYPE html>
@@ -175,7 +173,7 @@ for game in filtered_games:
         team_b_logo = f"https://www.handball.ch/images/club/{game['clubTeamBId']}.png"
         
         result = f"{game['teamAScoreFT']}:{game['teamBScoreFT']}" if game['gameStatusId'] == 2 else "-"
-        league = game["leagueLong"] 
+        league = game["leagueLong"].replace("Männer", "Herren")
 
         # Spiel Link erstellen
         game_id = game["gameId"]
