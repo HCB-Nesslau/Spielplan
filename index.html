@@ -55,6 +55,17 @@
         tr.no-border > td {
             padding-top: 0;
         }
+        .datetime-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem; /* Adjust spacing between date and time */
+        }
+        .datetime-container .date {
+            white-space: nowrap;
+        }
+        .datetime-container .time {
+            white-space: nowrap;
+        }
     </style>
 </head>
 <body>
@@ -63,6 +74,7 @@
             <thead>
                 <tr>
                     <th>Datum</th>
+                    <th></th>
                     <th>Liga</th>
                     <th class="heim">Heim</th>
                     <th></th>
@@ -75,7 +87,12 @@
             <tbody>
 
                 <tr class="">
-                    <td style="display: ruby-text;">19.01.2025, 10:00 Uhr</td>
+                    <td colspan="2">
+                        <div class="datetime-container">
+                            <span class="date" style="">19.01.2025</span>
+                            <span class="time">10:00 Uhr</span>
+                        </div>
+                    </td>
                     <td>Junioren U17 Promotion S1</td>
                     <td class="heim">HC Büelen Nesslau</td>
                     <td class="logo-row"><div class='img-container'><img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'></div></td>
@@ -86,7 +103,12 @@
                 </tr>
         
                 <tr class="">
-                    <td style="display: ruby-text;">25.01.2025, 15:30 Uhr</td>
+                    <td colspan="2">
+                        <div class="datetime-container">
+                            <span class="date" style="">25.01.2025</span>
+                            <span class="time">15:30 Uhr</span>
+                        </div>
+                    </td>
                     <td>Frauen 3. Liga</td>
                     <td class="heim">HC Büelen Nesslau</td>
                     <td class="logo-row"><div class='img-container'><img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'></div></td>
@@ -97,7 +119,12 @@
                 </tr>
         
                 <tr class="no-border">
-                    <td style="display: ruby-text;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;19:15 Uhr</td>
+                    <td colspan="2">
+                        <div class="datetime-container">
+                            <span class="date" style="visibility: hidden;">25.01.2025</span>
+                            <span class="time">19:15 Uhr</span>
+                        </div>
+                    </td>
                     <td>Männer 3. Liga</td>
                     <td class="heim">HC Stammheim 1</td>
                     <td class="logo-row"><div class='img-container'><img src='https://www.handball.ch/images/club/140568.png' alt='Logo HC Stammheim 1'></div></td>
@@ -108,7 +135,12 @@
                 </tr>
         
                 <tr class="">
-                    <td style="display: ruby-text;">01.02.2025, 15:15 Uhr</td>
+                    <td colspan="2">
+                        <div class="datetime-container">
+                            <span class="date" style="">01.02.2025</span>
+                            <span class="time">15:15 Uhr</span>
+                        </div>
+                    </td>
                     <td>Männer 3. Liga</td>
                     <td class="heim">HC Flawil 2</td>
                     <td class="logo-row"><div class='img-container'><img src='https://www.handball.ch/images/club/140478.png' alt='Logo HC Flawil 2'></div></td>
@@ -119,7 +151,12 @@
                 </tr>
         
                 <tr class="">
-                    <td style="display: ruby-text;">02.02.2025, 16:00 Uhr</td>
+                    <td colspan="2">
+                        <div class="datetime-container">
+                            <span class="date" style="">02.02.2025</span>
+                            <span class="time">16:00 Uhr</span>
+                        </div>
+                    </td>
                     <td>Frauen 3. Liga</td>
                     <td class="heim">TV Appenzell 2</td>
                     <td class="logo-row"><div class='img-container'><img src='https://www.handball.ch/images/club/140277.png' alt='Logo TV Appenzell 2'></div></td>
@@ -130,7 +167,12 @@
                 </tr>
         
                 <tr class="">
-                    <td style="display: ruby-text;">08.02.2025, 11:00 Uhr</td>
+                    <td colspan="2">
+                        <div class="datetime-container">
+                            <span class="date" style="">08.02.2025</span>
+                            <span class="time">11:00 Uhr</span>
+                        </div>
+                    </td>
                     <td>Frauen 3. Liga</td>
                     <td class="heim">HC Büelen Nesslau</td>
                     <td class="logo-row"><div class='img-container'><img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'></div></td>
@@ -141,7 +183,12 @@
                 </tr>
         
                 <tr class="no-border">
-                    <td style="display: ruby-text;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12:45 Uhr</td>
+                    <td colspan="2">
+                        <div class="datetime-container">
+                            <span class="date" style="visibility: hidden;">08.02.2025</span>
+                            <span class="time">12:45 Uhr</span>
+                        </div>
+                    </td>
                     <td>Männer 3. Liga</td>
                     <td class="heim">HC Büelen Nesslau</td>
                     <td class="logo-row"><div class='img-container'><img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'></div></td>
@@ -152,7 +199,12 @@
                 </tr>
         
                 <tr class="">
-                    <td style="display: ruby-text;">09.02.2025, 10:30 Uhr</td>
+                    <td colspan="2">
+                        <div class="datetime-container">
+                            <span class="date" style="">09.02.2025</span>
+                            <span class="time">10:30 Uhr</span>
+                        </div>
+                    </td>
                     <td>Junioren U17 Promotion S1</td>
                     <td class="heim">SG Otmar Bruggen</td>
                     <td class="logo-row"><div class='img-container'><img src='https://www.handball.ch/images/club/140684.png' alt='Logo SG Otmar Bruggen'></div></td>
@@ -163,7 +215,12 @@
                 </tr>
         
                 <tr class="">
-                    <td style="display: ruby-text;">15.02.2025, 12:00 Uhr</td>
+                    <td colspan="2">
+                        <div class="datetime-container">
+                            <span class="date" style="">15.02.2025</span>
+                            <span class="time">12:00 Uhr</span>
+                        </div>
+                    </td>
                     <td>Männer 3. Liga</td>
                     <td class="heim">HC Büelen Nesslau</td>
                     <td class="logo-row"><div class='img-container'><img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'></div></td>
@@ -174,7 +231,12 @@
                 </tr>
         
                 <tr class="no-border">
-                    <td style="display: ruby-text;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13:45 Uhr</td>
+                    <td colspan="2">
+                        <div class="datetime-container">
+                            <span class="date" style="visibility: hidden;">15.02.2025</span>
+                            <span class="time">13:45 Uhr</span>
+                        </div>
+                    </td>
                     <td>Junioren U17 Promotion S1</td>
                     <td class="heim">HC Büelen Nesslau</td>
                     <td class="logo-row"><div class='img-container'><img src='https://www.handball.ch/images/club/296614.png' alt='Logo HC Büelen Nesslau'></div></td>
@@ -185,7 +247,12 @@
                 </tr>
         
                 <tr class="no-border">
-                    <td style="display: ruby-text;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17:15 Uhr</td>
+                    <td colspan="2">
+                        <div class="datetime-container">
+                            <span class="date" style="visibility: hidden;">15.02.2025</span>
+                            <span class="time">17:15 Uhr</span>
+                        </div>
+                    </td>
                     <td>Frauen 3. Liga</td>
                     <td class="heim">HC Amriswil 2</td>
                     <td class="logo-row"><div class='img-container'><img src='https://www.handball.ch/images/club/140473.png' alt='Logo HC Amriswil 2'></div></td>
