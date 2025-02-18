@@ -8,6 +8,17 @@ with open('./data.json', 'r', encoding='utf-8') as file:
     games = json.load(file)
 
 
+# Zeitfenster definieren: -3 Tage bis +30 Tage ab heute
+today = datetime.now()
+start_date = today - timedelta(days=3)
+end_date = today + timedelta(days=365)
+
+# Spiele nach Datum und Uhrzeit sortieren und filtern
+filtered_games = [
+    game for game in games
+    if start_date <= datetime.fromisoformat(game["gameDateTime"]) <= end_date 
+]
+
 # Custom Events aus CSV-Datei laden
 with open('./custom_events.csv', 'r', encoding='utf-8') as csvfile:
     reader = csv.DictReader(csvfile)
@@ -27,17 +38,6 @@ with open('./custom_events.csv', 'r', encoding='utf-8') as csvfile:
             "gameStatusId": 0,  # Placeholder status
             "gameId": None  # No link for custom events
         })
-
-# Zeitfenster definieren: -3 Tage bis +30 Tage ab heute
-today = datetime.now()
-start_date = today - timedelta(days=3)
-end_date = today + timedelta(days=30)
-
-# Spiele nach Datum und Uhrzeit sortieren und filtern
-filtered_games = [
-    game for game in games
-    if start_date <= datetime.fromisoformat(game["gameDateTime"]) <= end_date
-]
 
 filtered_games.sort(key=lambda game: datetime.fromisoformat(game["gameDateTime"]))
 
